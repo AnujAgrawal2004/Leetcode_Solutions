@@ -27,32 +27,22 @@ class GFG
 class Solution{
     static int numberOfSubsequences(String S, String W){
         // code here
-          int ans=0;
-
-        byte[] visit = new byte[S.length()];
-
-        for(int i=0;i<=S.length()-W.length();i++) {
-
-            int k=0;
-
-            for(int j=0;j<S.length();j++) {
-
-                if(S.charAt(j)==W.charAt(k) && visit[j]==0) {
-
-                    k++;
-
-                    visit[j]=1;
-
-                }
-
-                if(k>=W.length()) break;
-
-            }
-
-            if(k>=W.length()) ans++;
-
-        }
-
-        return ans;
+         int ans=0;
+         byte[] vis=new byte[S.length()];
+         for(int i=0;i<=S.length()-W.length();i++){
+             int k=0;
+             for(int j=0;j<S.length();j++){
+                 if(S.charAt(j)==W.charAt(k) &&vis[j]==0){
+                     k++;
+                     vis[j]=1;
+                     
+                 }
+                 if(k>=W.length())
+                 break;
+             }
+             if(k>=W.length())
+             ans++;
+         }
+         return ans;
     }
 }
